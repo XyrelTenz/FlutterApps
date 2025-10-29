@@ -44,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(height: 20),
 
                   SizedBox(
-                    width: 380,
+                    width: MediaQuery.of(context).size.width * 0.9,
                     child: TextField(
                       controller: usernameController,
                       obscureText: false,
@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(height: 15),
 
                   SizedBox(
-                    width: 380,
+                    width: MediaQuery.of(context).size.width * 0.9,
                     child: TextField(
                       controller: passwordController,
                       obscureText: true,
@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(height: 15),
 
                   SizedBox(
-                    width: 380,
+                    width: MediaQuery.of(context).size.width * 0.9,
                     height: 55.0,
                     child: TextButton(
                       onPressed: () {

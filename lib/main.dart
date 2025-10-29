@@ -1,7 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'auth/login.dart';
+// import 'auth/login.dart';
+import "auth/login2.dart";
 
 void main() => runApp(const MyApp());
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // Root widget
-      home: LoginPage(),
+      home: Login2(),
     );
   }
 }
