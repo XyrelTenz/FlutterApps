@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'auth/login.dart';
 
 void main() => runApp(const MyApp());
 
@@ -10,16 +13,93 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // Root widget
-      home: Scaffold(body: Center(child: LoginForm())),
+      home: LoginPage(),
     );
   }
 }
 
-class LoginForm extends StatelessWidget {
-  const LoginForm({super.key});
+// class LoginForm extends StatelessWidget {
+//   LoginForm({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(), body: Center());
-  }
-}
+//   final TextEditingController usernameController = TextEditingController();
+//   final TextEditingController passwordController = TextEditingController();
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(),
+//       body: Center(
+//         child: Row(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             Column(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               crossAxisAlignment: CrossAxisAlignment.center,
+//               children: [
+//                 Column(
+//                   children: [
+//                     // Username
+//                     SizedBox(
+//                       width: 350.0,
+//                       child: TextField(
+//                         obscureText: false, // True = Password False = Text
+//                         controller: usernameController,
+//                         decoration: InputDecoration(
+//                           border: OutlineInputBorder(),
+//                           labelText: "Username",
+//                           labelStyle: TextStyle(color: Colors.black),
+//                         ),
+//                       ),
+//                     ),
+
+//                     // Spacing or Gaps
+//                     const SizedBox(height: 10),
+
+//                     // Password
+//                     SizedBox(
+//                       width: 350.0,
+//                       child: TextField(
+//                         obscureText: true,
+//                         controller: passwordController,
+//                         decoration: InputDecoration(
+//                           border: OutlineInputBorder(),
+//                           labelText: "Password",
+//                           labelStyle: TextStyle(color: Colors.black),
+//                         ),
+//                       ),
+//                     ),
+
+//                     //Spacing or Gaps
+//                     const SizedBox(height: 10),
+
+//                     SizedBox(
+//                       width: 350.0,
+//                       height: 55.0,
+//                       child: TextButton(
+//                         onPressed: () {
+//                           String username = usernameController.text;
+//                           String password = passwordController.text;
+
+//                           print("Username: $username");
+//                           print("Password: $password");
+//                         },
+//                         style: TextButton.styleFrom(
+//                           backgroundColor: Colors.blue,
+//                           foregroundColor: Colors.black,
+//                           shape: RoundedRectangleBorder(
+//                             borderRadius: BorderRadius.zero,
+//                           ),
+//                         ),
+//                         child: Text("Login"),
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ],
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
