@@ -129,9 +129,10 @@ class _Login3State extends State<Login3> {
                             borderSide: BorderSide(color: Colors.grey),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey),
+                            borderSide: BorderSide(color: Colors.orange),
                           ),
                           labelText: "Username",
+                          labelStyle: TextStyle(color: Colors.black),
                         ),
                       ),
                     ),
@@ -141,15 +142,16 @@ class _Login3State extends State<Login3> {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 1,
                       child: TextField(
-                        obscureText: false,
+                        obscureText: true,
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.grey),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey),
+                            borderSide: BorderSide(color: Colors.orange),
                           ),
                           labelText: "Password",
+                          labelStyle: TextStyle(color: Colors.black),
                         ),
                       ),
                     ),
