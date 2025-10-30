@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 
 class Login3 extends StatefulWidget {
   const Login3({super.key});
@@ -33,13 +33,25 @@ class _Login3State extends State<Login3> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Title
-                const Text(
-                  "EcoThrive",
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.normal,
-                    color: Colors.black,
-                  ),
+                Row(
+                  children: [
+                    const Text(
+                      "E",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.orange,
+                      ),
+                    ),
+                    const Text(
+                      "coThrive",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 10),
 
@@ -57,7 +69,7 @@ class _Login3State extends State<Login3> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.42,
+                      width: MediaQuery.of(context).size.width * 0.44,
                       child: TextButton.icon(
                         style: TextButton.styleFrom(
                           shape: RoundedRectangleBorder(
@@ -74,7 +86,7 @@ class _Login3State extends State<Login3> {
                       ),
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.42,
+                      width: MediaQuery.of(context).size.width * 0.44,
                       child: TextButton.icon(
                         onPressed: () {},
                         style: TextButton.styleFrom(
@@ -159,7 +171,21 @@ class _Login3State extends State<Login3> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Remeber Me"),
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: _ischecked,
+                              onChanged: (bool? value) {
+                                setState(() {
+                                  _ischecked = value ?? false;
+                                });
+                              },
+                              checkColor: Colors.white,
+                              activeColor: Colors.orange,
+                            ),
+                            Text("Remember Me"),
+                          ],
+                        ),
                         Text(
                           "Forgot Password?",
                           style: TextStyle(
@@ -172,16 +198,6 @@ class _Login3State extends State<Login3> {
 
                     const SizedBox(height: 20),
 
-                    // Checkbox(
-                    //   value: _ischecked,
-                    //   onChanged: (bool? newValue) {
-                    //     setState(() {
-                    //       _ischecked = newValue ?? false;
-                    //     });
-                    //   },
-                    //   activeColor: Colors.orange,
-                    //   checkColor: Colors.orange,
-                    // ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 1,
                       child: TextButton(
@@ -203,6 +219,44 @@ class _Login3State extends State<Login3> {
                       ),
                     ),
                   ],
+                ),
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.35,
+                  width: MediaQuery.of(context).size.width * 1,
+                  color: Colors.white,
+                  child: Align(
+                    alignment: AlignmentGeometry.bottomCenter,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+
+                          children: [
+                            Text(
+                              "Dont have an account?",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.normal,
+                                color: Colors.black,
+                              ),
+                            ),
+
+                            const SizedBox(width: 10),
+
+                            Text(
+                              "Sign Up",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.normal,
+                                color: Colors.orange,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
