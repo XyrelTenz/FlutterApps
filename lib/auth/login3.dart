@@ -11,6 +11,7 @@ class Login3 extends StatefulWidget {
 class _Login3State extends State<Login3> {
   final username = TextEditingController();
   final password = TextEditingController();
+  bool _ischecked = false;
 
   @override
   void dispose() {
@@ -64,7 +65,7 @@ class _Login3State extends State<Login3> {
                           ),
                           side: const BorderSide(color: Colors.grey, width: 1),
                         ),
-                        icon: const Icon(Icons.login, color: Colors.black),
+                        icon: const Icon(Icons.gite, color: Colors.orange),
                         onPressed: () {},
                         label: const Text(
                           "Google",
@@ -82,7 +83,7 @@ class _Login3State extends State<Login3> {
                           ),
                           side: const BorderSide(color: Colors.grey, width: 1),
                         ),
-                        icon: const Icon(Icons.facebook, color: Colors.black),
+                        icon: const Icon(Icons.facebook, color: Colors.blue),
                         label: const Text(
                           "Facebook",
                           style: TextStyle(fontSize: 14, color: Colors.black),
@@ -94,29 +95,113 @@ class _Login3State extends State<Login3> {
 
                 const SizedBox(height: 20),
 
-                // 🔹 OR Divider Line 🔹
                 Row(
                   children: [
-                    const Expanded(
+                    Expanded(
                       child: Divider(
-                        color: Colors.grey,
                         thickness: 1,
+                        color: Colors.black,
                         endIndent: 10,
                       ),
                     ),
-                    const Text("OR", style: TextStyle(color: Colors.black)),
-                    const Expanded(
+                    Text("OR", style: TextStyle(color: Colors.black)),
+                    Expanded(
                       child: Divider(
-                        color: Colors.grey,
                         thickness: 1,
+                        color: Colors.black,
                         indent: 10,
                       ),
                     ),
                   ],
                 ),
-
-                // Add your login form below
                 const SizedBox(height: 20),
+
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 1,
+                      child: TextField(
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey),
+                          ),
+                          labelText: "Username",
+                        ),
+                      ),
+                    ),
+
+                    const SizedBox(height: 10),
+
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 1,
+                      child: TextField(
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey),
+                          ),
+                          labelText: "Password",
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Remeber Me"),
+                        Text(
+                          "Forgot Password?",
+                          style: TextStyle(
+                            color: Colors.orange,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    const SizedBox(height: 20),
+
+                    // Checkbox(
+                    //   value: _ischecked,
+                    //   onChanged: (bool? newValue) {
+                    //     setState(() {
+                    //       _ischecked = newValue ?? false;
+                    //     });
+                    //   },
+                    //   activeColor: Colors.orange,
+                    //   checkColor: Colors.orange,
+                    // ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 1,
+                      child: TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.orange,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadiusGeometry.circular(10),
+                          ),
+                        ),
+                        child: Text(
+                          "Sign In",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
