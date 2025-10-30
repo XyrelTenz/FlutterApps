@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // Root widget
-      home: Login3(),
+      // Root widge
+           home: Login3(),
     );
   }
 }
