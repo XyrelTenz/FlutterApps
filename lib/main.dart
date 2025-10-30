@@ -2,8 +2,9 @@
 
 import 'package:flutter/material.dart';
 // import 'auth/login.dart';
-import "auth/login2.dart";
+// import "auth/login2.dart";
 // import "auth/login3.dart";
+import "widget/bottomnavbar.dart";
 
 void main() => runApp(const MyApp());
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // Root widge
-      home: Login2(),
+      home: Navbar(),
     );
   }
 }
