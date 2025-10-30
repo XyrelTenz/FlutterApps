@@ -25,7 +25,7 @@ class _Login3State extends State<Login3> {
     return Material(
       child: SafeArea(
         child: Container(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
           color: Colors.white,
           height: MediaQuery.of(context).size.height,
           child: SingleChildScrollView(
@@ -172,7 +172,7 @@ class _Login3State extends State<Login3> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Row(
-                          children: [
+                          children: <Widget>[
                             Checkbox(
                               value: _ischecked,
                               onChanged: (bool? value) {
@@ -201,7 +201,13 @@ class _Login3State extends State<Login3> {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 1,
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          final user = username.text;
+                          final pass = password.text;
+
+                          print("Username: $user");
+                          print("Password: $pass");
+                        },
                         style: TextButton.styleFrom(
                           backgroundColor: Colors.orange,
                           shape: RoundedRectangleBorder(
