@@ -1,5 +1,4 @@
 import "package:flutter/material.dart";
-import "package:flutter_apps/screen/home.dart";
 
 class Navbar extends StatefulWidget {
   const Navbar({super.key});
@@ -9,23 +8,26 @@ class Navbar extends StatefulWidget {
 }
 
 class _NavbarState extends State<Navbar> {
-  int _currentIndex = 0;
+  int _currenIndex = 0;
 
-  final List<Widget> _screens = [const Home()];
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_currentIndex],
+      body: Center(child: Text("Center")),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        type: BottomNavigationBarType.fixed,
+        currentIndex: _currenIndex,
         onTap: (index) => setState(() {
-          _currentIndex = index;
+          _currenIndex = index;
         }),
-        items: const [
+        type: BottomNavigationBarType.fixed,
+        items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.people), label: "User"),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: "Settings",
