@@ -1,3 +1,4 @@
+import "package:curved_navigation_bar/curved_navigation_bar.dart";
 import "package:flutter/material.dart";
 
 class ResizeableContainer extends StatefulWidget {
@@ -19,6 +20,22 @@ class _ResizeableContainerState extends State<ResizeableContainer> {
     });
   }
 
+  bool isClosed = false;
+
+  void close() {
+    setState(() {
+      height = 100;
+      isClosed = true;
+    });
+  }
+
+  void open() {
+    setState(() {
+      height = 500;
+      isClosed = false;
+    });
+  }
+
   int currentIndex = 0;
 
   void navbarMethod(value) {
@@ -35,17 +52,19 @@ class _ResizeableContainerState extends State<ResizeableContainer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[100],
+      backgroundColor: Colors.blue[50],
       body: SafeArea(
         child: Stack(
           children: [
-            const Center(child: Text("Data Here")),
+            const Center(child: Text("Home")),
             Align(
               alignment: Alignment.bottomCenter,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Container(
+                  AnimatedContainer(
+                    duration: Duration(milliseconds: 200),
+                    curve: Curves.easeInOut,
                     height: height,
                     decoration: BoxDecoration(
                       color: Colors.grey[100],
@@ -53,12 +72,13 @@ class _ResizeableContainerState extends State<ResizeableContainer> {
                         top: Radius.circular(40),
                       ),
                     ),
-                    width: double.infinity,
+                    width: MediaQuery.of(context).size.width * 0.9,
                     child: Column(
                       children: [
                         GestureDetector(
                           behavior: HitTestBehavior.translucent,
                           onVerticalDragUpdate: resizeableContainer,
+                          onDoubleTap: () => isClosed ? open() : close(),
                           child: Container(
                             padding: EdgeInsets.only(top: 10),
                             alignment: Alignment.center,
@@ -77,32 +97,17 @@ class _ResizeableContainerState extends State<ResizeableContainer> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              BottomNavigationBar(
-                                currentIndex: currentIndex,
+                              CurvedNavigationBar(
+                                index: currentIndex,
                                 onTap: navbarMethod,
-                                backgroundColor: Colors.grey[100],
-                                type: BottomNavigationBarType.fixed,
-                                elevation: 0,
-                                fixedColor: Colors.blue[400],
-                                showSelectedLabels: false,
-                                showUnselectedLabels: false,
-                                items: const [
-                                  BottomNavigationBarItem(
-                                    icon: Icon(Icons.home),
-                                    label: "Home",
-                                  ),
-                                  BottomNavigationBarItem(
-                                    icon: Icon(Icons.search),
-                                    label: "Search",
-                                  ),
-                                  BottomNavigationBarItem(
-                                    icon: Icon(Icons.people),
-                                    label: "User",
-                                  ),
-                                  BottomNavigationBarItem(
-                                    icon: Icon(Icons.settings),
-                                    label: "Settings",
-                                  ),
+                                backgroundColor: Colors.transparent,
+                                buttonBackgroundColor: Colors.orange[100],
+                                animationDuration: Duration(milliseconds: 400),
+                                items: [
+                                  Icon(Icons.home_work),
+                                  Icon(Icons.search),
+                                  Icon(Icons.people),
+                                  Icon(Icons.settings),
                                 ],
                               ),
                             ],

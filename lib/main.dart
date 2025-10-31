@@ -1,7 +1,7 @@
 // import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_apps/auth/instagram.dart';
+// import 'package:flutter_apps/auth/instagram.dart';
 // import 'auth/login.dart';
 // import "auth/login2.dart";
 // import "auth/login3.dart";
@@ -12,7 +12,9 @@ import 'package:flutter_apps/auth/instagram.dart';
 // import "auth/instagram.dart";
 // import "widget/grid.dart";
 // import 'widget/draggable.dart';
-import "widget/resizablecontainer.dart";
+// import "widget/resizablecontainer.dart";
+// import "animations/animation_page.dart";
+import "widget/gesture_detector.dart";
 
 void main() => runApp(const MyApp());
 
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // Root widget
-      home: ResizeableContainer(),
+      home: GestureDetectors(),
     );
   }
 }
