@@ -8,7 +8,7 @@ class GestureDetectors extends StatefulWidget {
 }
 
 class _GestureDetectorState extends State<GestureDetectors> {
-  double height = 200;
+  double height = 100;
   final double minHeight = 100;
   final double maxHeight = 500;
   bool isClosed = false;
@@ -53,9 +53,14 @@ class _GestureDetectorState extends State<GestureDetectors> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   AnimatedContainer(
-                    duration: Duration(milliseconds: 500),
-                    curve: Curves.easeInOut,
-                    color: Colors.blue[100],
+                    duration: Duration(milliseconds: 100),
+                    decoration: BoxDecoration(
+                      color: Colors.blue[100],
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(50),
+                      ),
+                    ),
+                    curve: Curves.ease,
                     height: height,
                     width: double.infinity,
                     child: Column(
@@ -63,7 +68,7 @@ class _GestureDetectorState extends State<GestureDetectors> {
                         GestureDetector(
                           onVerticalDragUpdate: gestureDetector,
                           behavior: HitTestBehavior.translucent,
-                          onDoubleTap: () => isClosed ? open() : close(),
+                          onTap: () => isClosed ? open() : close(),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
