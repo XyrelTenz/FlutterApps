@@ -101,7 +101,7 @@ class _InstagramState extends State<Instagram> {
                 padding: const EdgeInsets.only(top: 40, bottom: 40),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+                  children: <Widget>[
                     Icon(Icons.facebook, color: Colors.blue, size: 25),
                     SizedBox(width: 5),
                     Text(
