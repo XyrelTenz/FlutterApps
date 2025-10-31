@@ -1,6 +1,6 @@
 // import 'dart:io';
-
 import 'package:flutter/material.dart';
+import "package:flutter_riverpod/flutter_riverpod.dart";
 // import 'package:flutter_apps/auth/instagram.dart';
 // import 'auth/login.dart';
 // import "auth/login2.dart";
@@ -14,19 +14,21 @@ import 'package:flutter/material.dart';
 // import 'widget/draggable.dart';
 // import "widget/resizablecontainer.dart";
 // import "animations/animation_page.dart";
-import "widget/gesture_detector.dart";
+// import "widget/gesture_detector.dart";
+// import "screen/riverpod_playground.dart";
+import "widget/double_layout.dart";
 
-void main() => runApp(const MyApp());
+void main() => runApp(ProviderScope(key: UniqueKey(), child: MainApp()));
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       // Root widget
-      home: GestureDetectors(),
+      home: DoubleLayout(),
     );
   }
 }
