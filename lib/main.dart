@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 // import "widget/bottomnavbar.dart";
 // import "widget/expanded.dart";
 // import "widget/listview.dart";
-import "screen/home_screen.dart";
+// import "screen/home_screen.dart";
+import "auth/instagram.dart";
 
 void main() => runApp(const MyApp());
 
@@ -18,8 +19,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // Root widge
-      home: HomeScreen(),
+      // Root widget
+      home: Instgram(),
     );
   }
 }
