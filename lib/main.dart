@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // Root widget
-      home: Instgram(),
+      home: Instagram(),
     );
   }
 }
