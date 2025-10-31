@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 // import "auth/login3.dart";
 // import "widget/bottomnavbar.dart";
 // import "widget/expanded.dart";
-import "widget/listview.dart";
+// import "widget/listview.dart";
+import "screen/home_screen.dart";
 
 void main() => runApp(const MyApp());
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // Root widge
-      home: ListViewWidget(),
+      home: HomeScreen(),
     );
   }
 }

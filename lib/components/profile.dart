@@ -7,23 +7,25 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: EdgeInsetsGeometry.symmetric(vertical: 10, horizontal: 20),
-        child: Row(
-          children: [
-            Container(
-              height: 100,
-              width: 100,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.green[100],
+    return Column(
+      children: [
+        Padding(
+          padding: EdgeInsetsGeometry.symmetric(vertical: 10, horizontal: 20),
+          child: Row(
+            children: [
+              Container(
+                height: 100,
+                width: 100,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.green[100],
+                ),
+                child: Text(profiles, textAlign: TextAlign.center),
               ),
-              child: Text(profiles, textAlign: TextAlign.center),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
+      ],
     );
   }
 }
