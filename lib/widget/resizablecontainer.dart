@@ -83,6 +83,7 @@ class _ResizeableContainerState extends State<ResizeableContainer> {
                                 backgroundColor: Colors.grey[100],
                                 type: BottomNavigationBarType.fixed,
                                 elevation: 0,
+                                fixedColor: Colors.blue[400],
                                 showSelectedLabels: false,
                                 showUnselectedLabels: false,
                                 items: const [
