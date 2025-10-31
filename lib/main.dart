@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 // import 'auth/login.dart';
 // import "auth/login2.dart";
 // import "auth/login3.dart";
-// import "widget/bottomnavbar.dart";
+import "widget/bottomnavbar.dart";
 // import "widget/expanded.dart";
 // import "widget/listview.dart";
 // import "screen/home_screen.dart";
 // import "auth/instagram.dart";
-import "widget/grid.dart";
+// import "widget/grid.dart";
 
 void main() => runApp(const MyApp());
 
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // Root widget
-      home: GridList(),
+      home: Navbar(),
     );
   }
 }
