@@ -8,7 +8,8 @@ import 'package:flutter/material.dart';
 // import "widget/expanded.dart";
 // import "widget/listview.dart";
 // import "screen/home_screen.dart";
-import "auth/instagram.dart";
+// import "auth/instagram.dart";
+import "widget/grid.dart";
 
 void main() => runApp(const MyApp());
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // Root widget
-      home: Instagram(),
+      home: GridList(),
     );
   }
 }
