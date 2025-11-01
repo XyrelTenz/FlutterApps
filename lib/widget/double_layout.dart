@@ -6,7 +6,7 @@ class DoubleLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: Color(0xFFEDD6C8),
       body: Center(
         child: SafeArea(
           child: Column(
@@ -24,7 +24,30 @@ class DoubleLayout extends StatelessWidget {
                     ),
                     width: MediaQuery.of(context).size.width,
 
-                    child: Center(child: Text("Title")),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.coffee,
+                              size: 65,
+                              color: Color(0xFFC67C4E),
+                            ),
+                            Text(
+                              "Coffee",
+                              style: TextStyle(
+                                color: Color(0xFF313131),
+                                fontSize: 30,
+                                fontStyle: FontStyle.italic,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -124,34 +147,37 @@ class DoubleLayout extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Don't have an account?",
-                                  style: TextStyle(
-                                    color: Color(0xFF313131),
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.normal,
+                        Padding(
+                          padding: const EdgeInsets.only(top: 60),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Don't have an account?",
+                                    style: TextStyle(
+                                      color: Color(0xFF313131),
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                                   ),
-                                ),
 
-                                const SizedBox(width: 5),
+                                  const SizedBox(width: 5),
 
-                                Text(
-                                  "Sign up",
-                                  style: TextStyle(
-                                    color: Color(0xFFC67C4E),
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
+                                  Text(
+                                    "Sign up",
+                                    style: TextStyle(
+                                      color: Color(0xFFC67C4E),
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          ],
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
