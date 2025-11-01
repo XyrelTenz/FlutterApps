@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class DoubleLayout extends StatelessWidget {
   const DoubleLayout({super.key});
@@ -31,12 +32,13 @@ class DoubleLayout extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(
-                              Icons.coffee,
+                              Icons.navigation,
                               size: 65,
                               color: Color(0xFFC67C4E),
                             ),
+
                             Text(
-                              "Coffee",
+                              "School Name",
                               style: TextStyle(
                                 color: Color(0xFF313131),
                                 fontSize: 30,
@@ -52,7 +54,7 @@ class DoubleLayout extends StatelessWidget {
                 ),
               ),
               Expanded(
-                flex: 1,
+                flex: 2,
                 child: Container(
                   color: Color(0xFFEDD6C8),
                   child: Container(
@@ -61,15 +63,44 @@ class DoubleLayout extends StatelessWidget {
                       color: Color(0xFFF9F2ED),
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(75),
+                        bottomLeft: Radius.circular(75),
                       ),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
+                        GestureDetector(
+                          behavior: HitTestBehavior.translucent,
+                          // onVerticalDragUpdate: slidingContainer,
+                          child: Stack(
+                            // mainAxisAlignment: MainAxisAlignment.end,
+                            // crossAxisAlignment: CrossAxisAlignment.center,
+                            // alignment: Alignment.topLeft,
+                            children: [
+                              Positioned(
+                                top: 50,
+                                left: 20,
+                                child: Container(
+                                  // alignment: Alignment.centerLeft,
+                                  width: 5,
+                                  color: Colors.black,
+
+                                  // height: 50,
+                                  // width: 10,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(padding: EdgeInsetsGeometry.only(top: 25)),
                         Text("Sign In", style: TextStyle(fontSize: 25)),
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.9,
                           child: TextField(
+                            keyboardType: TextInputType.number,
+                            inputFormatters: [
+                              FilteringTextInputFormatter.digitsOnly,
+                            ],
                             obscureText: false,
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
@@ -78,7 +109,7 @@ class DoubleLayout extends StatelessWidget {
                                   width: 1.5,
                                 ),
                               ),
-                              hintText: "Username",
+                              hintText: "Student ID",
                               hintStyle: TextStyle(
                                 color: Color(0xFF313131),
                                 fontSize: 14,
@@ -147,37 +178,52 @@ class DoubleLayout extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 60),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "Don't have an account?",
-                                    style: TextStyle(
-                                      color: Color(0xFF313131),
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                                  ),
-
-                                  const SizedBox(width: 5),
-
-                                  Text(
-                                    "Sign up",
-                                    style: TextStyle(
-                                      color: Color(0xFFC67C4E),
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
+                        Padding(padding: EdgeInsetsGeometry.only(bottom: 25)),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  color: Color(0xFFF9F2ED),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFEDD6C8),
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(75),
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Don't have an account?",
+                              style: TextStyle(
+                                color: Color(0xFF313131),
+                                fontSize: 15,
+                                fontWeight: FontWeight.normal,
                               ),
-                            ],
-                          ),
+                            ),
+
+                            const SizedBox(width: 5),
+
+                            Text(
+                              "Sign up",
+                              style: TextStyle(
+                                color: Color(0xFFC67C4E),
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
