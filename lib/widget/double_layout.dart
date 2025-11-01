@@ -1,8 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class DoubleLayout extends StatelessWidget {
+class DoubleLayout extends StatefulWidget {
   const DoubleLayout({super.key});
+
+  @override
+  State<DoubleLayout> createState() => _DoubleLayoutState();
+}
+
+double screenWidth(BuildContext context) {
+  return MediaQuery.of(context).size.width;
+}
+
+class _DoubleLayoutState extends State<DoubleLayout> {
+  @override
+  void dispose() {
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,29 +83,29 @@ class DoubleLayout extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        GestureDetector(
-                          behavior: HitTestBehavior.translucent,
-                          // onVerticalDragUpdate: slidingContainer,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            // alignment: Alignment.topLeft,
-                            children: [
-                              Container(
-                                // alignment: Alignment.centerLeft,
-                                margin: EdgeInsets.only(left: 15),
-                                width: 5,
-                                color: Colors.white,
-                                // height: 50,
-                                // width: 10,
-                                child: Container(
-                                  width: 5,
-                                  height: 5,
-                                  color: Colors.black,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          // alignment: Alignment.topLeft,
+                          children: [
+                            Container(
+                              // alignment: Alignment.centerLeft,
+                              margin: EdgeInsets.only(left: 10),
+                              color: Colors.transparent,
+                              child: Container(
+                                width: 20,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(50),
+                                    bottomLeft: Radius.circular(50),
+                                    topRight: Radius.circular(50),
+                                  ),
+                                  color: Color(0xFF313131),
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                         Padding(padding: EdgeInsetsGeometry.only(top: 25)),
                         Text("Sign In", style: TextStyle(fontSize: 25)),
