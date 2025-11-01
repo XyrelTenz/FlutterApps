@@ -72,21 +72,22 @@ class DoubleLayout extends StatelessWidget {
                         GestureDetector(
                           behavior: HitTestBehavior.translucent,
                           // onVerticalDragUpdate: slidingContainer,
-                          child: Stack(
-                            // mainAxisAlignment: MainAxisAlignment.end,
-                            // crossAxisAlignment: CrossAxisAlignment.center,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             // alignment: Alignment.topLeft,
                             children: [
-                              Positioned(
-                                top: 50,
-                                left: 20,
+                              Container(
+                                // alignment: Alignment.centerLeft,
+                                margin: EdgeInsets.only(left: 15),
+                                width: 5,
+                                color: Colors.white,
+                                // height: 50,
+                                // width: 10,
                                 child: Container(
-                                  // alignment: Alignment.centerLeft,
                                   width: 5,
+                                  height: 5,
                                   color: Colors.black,
-
-                                  // height: 50,
-                                  // width: 10,
                                 ),
                               ),
                             ],
