@@ -16,7 +16,8 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 // import "animations/animation_page.dart";
 // import "widget/gesture_detector.dart";
 // import "screen/riverpod_playground.dart";
-import "widget/double_layout.dart";
+// import "widget/double_layout.dart";
+import "widget/sliver_appbar.dart";
 
 void main() => runApp(ProviderScope(key: UniqueKey(), child: MainApp()));
 
@@ -28,7 +29,7 @@ class MainApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       // Root widget
-      home: DoubleLayout(),
+      home: SilverAppbar(),
     );
   }
 }
