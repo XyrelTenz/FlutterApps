@@ -10,9 +10,9 @@ class Calculator extends StatefulWidget {
 class _CalculatorState extends State<Calculator> {
   final List<String> buttons = [
     'C',
+    '⌫',
     '÷',
     '×',
-    '⌫',
     '7',
     '8',
     '9',
@@ -27,11 +27,12 @@ class _CalculatorState extends State<Calculator> {
     '=',
     '0',
     '.',
-    '2',
-    '1',
+    '',
+    '',
+    '',
   ];
 
-  String displayText = "0";
+  String displayText = '0';
   bool justCalculated = false;
 
   void onButtonPressed(String value) {
@@ -48,19 +49,13 @@ class _CalculatorState extends State<Calculator> {
       } else if (value == '=') {
         _calculateResult();
       } else {
-        if (justCalculated) {
-          if (RegExp(r'[0-9.]').hasMatch(value)) {
-            displayText = value;
-          } else {
-            displayText += value;
-          }
+        if (justCalculated && RegExp(r'[0-9]').hasMatch(value)) {
+          displayText = value;
           justCalculated = false;
+        } else if (displayText == '0' && RegExp(r'[0-9.]').hasMatch(value)) {
+          displayText = value;
         } else {
-          if (displayText == '0' && RegExp(r'[0-9.]').hasMatch(value)) {
-            displayText = value;
-          } else {
-            displayText += value;
-          }
+          displayText += value;
         }
       }
     });
@@ -73,7 +68,10 @@ class _CalculatorState extends State<Calculator> {
 
       String formatted = result % 1 == 0
           ? result.toInt().toString()
-          : result.toString();
+          : result
+                .toStringAsFixed(6)
+                .replaceAll(RegExp(r'0+$'), '')
+                .replaceAll(RegExp(r'\.$'), '');
 
       setState(() {
         displayText = formatted;
@@ -89,6 +87,7 @@ class _CalculatorState extends State<Calculator> {
   double _evaluateExpression(String expr) {
     List<String> tokens = _tokenize(expr);
 
+    // Handle multiplication and division first
     for (int i = 0; i < tokens.length; i++) {
       if (tokens[i] == '*' || tokens[i] == '/') {
         double left = double.parse(tokens[i - 1]);
@@ -99,6 +98,7 @@ class _CalculatorState extends State<Calculator> {
       }
     }
 
+    // Then addition and subtraction
     for (int i = 0; i < tokens.length; i++) {
       if (tokens[i] == '+' || tokens[i] == '-') {
         double left = double.parse(tokens[i - 1]);
@@ -123,30 +123,27 @@ class _CalculatorState extends State<Calculator> {
       backgroundColor: const Color(0xFF1E1E1E),
       body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
           children: [
+            // Display Screen
             Expanded(
               flex: 1,
               child: Container(
-                width: double.infinity,
-                color: Colors.black12,
-                padding: const EdgeInsets.all(20),
-                child: Align(
-                  alignment: Alignment.bottomRight,
-                  child: Text(
-                    displayText,
-                    style: const TextStyle(
-                      fontSize: 48,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                alignment: Alignment.bottomRight,
+                padding: const EdgeInsets.all(24),
+                child: Text(
+                  displayText,
+                  style: const TextStyle(
+                    fontSize: 48,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
             ),
 
+            // Buttons Grid
             Expanded(
-              flex: 2,
+              flex: 1,
               child: Padding(
                 padding: const EdgeInsets.all(12),
                 child: GridView.builder(
@@ -162,11 +159,7 @@ class _CalculatorState extends State<Calculator> {
                     Color bgColor;
                     if (button == 'C' || button == '⌫') {
                       bgColor = Colors.redAccent;
-                    } else if (button == '=' ||
-                        button == '+' ||
-                        button == '-' ||
-                        button == '×' ||
-                        button == '÷') {
+                    } else if (['÷', '×', '-', '+', '='].contains(button)) {
                       bgColor = Colors.orangeAccent;
                     } else {
                       bgColor = Colors.grey[850]!;
@@ -179,14 +172,13 @@ class _CalculatorState extends State<Calculator> {
                           borderRadius: BorderRadius.circular(12),
                         ),
                       ),
-                      onPressed: button.isEmpty
-                          ? null
-                          : () => onButtonPressed(button),
+                      onPressed: () => onButtonPressed(button),
                       child: Text(
                         button,
                         style: const TextStyle(
                           fontSize: 26,
                           color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     );
