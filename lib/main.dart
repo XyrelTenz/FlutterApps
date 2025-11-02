@@ -19,8 +19,8 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 // import "widget/double_layout.dart";
 // import "widget/sliver_appbar.dart";
 // import "playgroud/calculator.dart";
-// import "widget/form.dart";
-import "widget/styled_widget.dart";
+import "widget/form.dart";
+// import "widget/styled_widget.dart"k
 
 void main() => runApp(ProviderScope(key: UniqueKey(), child: MainApp()));
 
@@ -32,7 +32,7 @@ class MainApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       // Root widget
-      home: StyledWidget(),
+      home: Forms(),
     );
   }
 }
