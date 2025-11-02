@@ -48,6 +48,7 @@ class _CalculatorState extends State<Calculator> {
         }
       } else if (value == '=') {
         _calculateResult();
+        // displayText = "Lunes Nasad!!";
       } else {
         if (justCalculated && RegExp(r'[0-9]').hasMatch(value)) {
           displayText = value;
@@ -87,7 +88,7 @@ class _CalculatorState extends State<Calculator> {
   double _evaluateExpression(String expr) {
     List<String> tokens = _tokenize(expr);
 
-    // Handle multiplication and division first
+    // Handle multiplication and division
     for (int i = 0; i < tokens.length; i++) {
       if (tokens[i] == '*' || tokens[i] == '/') {
         double left = double.parse(tokens[i - 1]);
@@ -98,7 +99,7 @@ class _CalculatorState extends State<Calculator> {
       }
     }
 
-    // Then addition and subtraction
+    // Addition and Subtraction
     for (int i = 0; i < tokens.length; i++) {
       if (tokens[i] == '+' || tokens[i] == '-') {
         double left = double.parse(tokens[i - 1]);
@@ -124,7 +125,6 @@ class _CalculatorState extends State<Calculator> {
       body: SafeArea(
         child: Column(
           children: [
-            // Display Screen
             Expanded(
               flex: 1,
               child: Container(
@@ -141,7 +141,6 @@ class _CalculatorState extends State<Calculator> {
               ),
             ),
 
-            // Buttons Grid
             Expanded(
               flex: 1,
               child: Padding(
