@@ -1,13 +1,13 @@
 import "package:flutter/material.dart";
 
-class Form extends StatefulWidget {
-  const Form({super.key});
+class Forms extends StatefulWidget {
+  const Forms({super.key});
 
   @override
-  State<Form> createState() => _FormState();
+  State<Forms> createState() => _FormsState();
 }
 
-class _FormState extends State<Form> {
+class _FormsState extends State<Forms> {
   @override
   void dispose() {
     super.dispose();
