@@ -52,7 +52,7 @@ class _DoubleLayoutState extends State<DoubleLayout> {
                             ),
 
                             Text(
-                              "School Name",
+                              "School",
                               style: TextStyle(
                                 color: Color(0xFF313131),
                                 fontSize: 30,
