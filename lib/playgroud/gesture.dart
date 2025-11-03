@@ -1,3 +1,4 @@
+import "package:curved_navigation_bar/curved_navigation_bar.dart";
 import "package:flutter/material.dart";
 
 class GesturePractice extends StatefulWidget {
@@ -8,14 +9,38 @@ class GesturePractice extends StatefulWidget {
 }
 
 class _GesturePracticeState extends State<GesturePractice> {
-  double height = 200;
-  double minHeight = 200;
-  double maxHeight = 500;
+  int _currentIndex = 0;
 
-  void gestureDetector(detail) {
+  void navMethod(index) {
     setState(() {
-      height -= detail.delta.dy;
-      height = height.clamp(minHeight, maxHeight);
+      _currentIndex = index;
+    });
+  }
+
+  double _height = 100;
+  double minHeight = 100;
+  double maxHeight = 600;
+
+  void verticalMethod(details) {
+    setState(() {
+      _height -= details.delta.dy;
+      _height = _height.clamp(minHeight, maxHeight);
+    });
+  }
+
+  bool isClose = false;
+
+  void close() {
+    setState(() {
+      _height = 50;
+      isClose = true;
+    });
+  }
+
+  void open() {
+    setState(() {
+      _height = maxHeight;
+      isClose = false;
     });
   }
 
@@ -27,38 +52,59 @@ class _GesturePracticeState extends State<GesturePractice> {
   @override
   Widget build(BuildContext build) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+        child: Stack(
+          alignment: Alignment.bottomCenter,
           children: [
-            Container(
-              height: height,
-              width: MediaQuery.of(context).size.width,
-              color: Color(0xFF313131),
-              child: Stack(
-                alignment: Alignment.topCenter,
-                children: [
-                  GestureDetector(
-                    onVerticalDragUpdate: gestureDetector,
-                    behavior: HitTestBehavior.translucent,
-                    child: Container(
-                      padding: EdgeInsets.only(top: 10),
-                      color: Colors.transparent,
-                      child: Container(
-                        width: 40,
-                        height: 5,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(50),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                AnimatedContainer(
+                  duration: Duration(milliseconds: 200),
+                  curve: Curves.easeInOut,
+                  height: _height,
+                  color: Colors.grey,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10),
+                        child: GestureDetector(
+                          onVerticalDragUpdate: verticalMethod,
+                          behavior: HitTestBehavior.translucent,
+                          onTap: () => isClose ? open() : close(),
+                          child: Container(
+                            alignment: Alignment.topCenter,
+                            height: 5,
+                            color: Colors.transparent,
+                            child: Container(
+                              height: 5,
+                              width: 20,
+                              color: Color(0xFF313131),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: CurvedNavigationBar(
+        index: _currentIndex,
+        backgroundColor: Colors.white,
+        animationDuration: Duration(milliseconds: 300),
+        color: Color(0xFF313131),
+        onTap: navMethod,
+        items: [
+          Icon(Icons.home, color: Colors.white),
+          Icon(Icons.search, color: Colors.white),
+          Icon(Icons.access_time, color: Colors.white),
+          Icon(Icons.person, color: Colors.white),
+        ],
       ),
     );
   }
