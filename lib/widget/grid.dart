@@ -11,7 +11,7 @@ class _GridListState extends State<GridList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.blue[100],
       body: SafeArea(
         child: GridView.count(
           scrollDirection: Axis.horizontal,
