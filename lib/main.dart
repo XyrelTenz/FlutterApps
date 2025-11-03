@@ -17,11 +17,13 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 // import "widget/gesture_detector.dart";
 // import "screen/riverpod_playground.dart";
 // import "widget/double_layout.dart";
-import "widget/sliver_appbar.dart";
+// import "widget/sliver_appbar.dart";
 // import "playgroud/calculator.dart";
 // import "widget/form.dart";
 // import "widget/styled_widget.dart"k
 // import "playgroud/gesture.dart";
+// import "widget/hero.dart";
+import "screen/welcome_screen.dart";
 
 void main() => runApp(ProviderScope(key: UniqueKey(), child: MainApp()));
 
@@ -33,7 +35,7 @@ class MainApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       // Root widget
-      home: SilverAppbar(),
+      home: WelcomeScreen(),
     );
   }
 }

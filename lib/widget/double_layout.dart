@@ -21,6 +21,15 @@ class _DoubleLayoutState extends State<DoubleLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_ios_new),
+        ),
+        backgroundColor: Color(0xFFEDD6C8),
+      ),
       backgroundColor: Color(0xFFEDD6C8),
       body: Center(
         child: SafeArea(
@@ -46,13 +55,13 @@ class _DoubleLayoutState extends State<DoubleLayout> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(
-                              Icons.navigation,
+                              Icons.coffee,
                               size: 65,
                               color: Color(0xFFC67C4E),
                             ),
 
                             Text(
-                              "School",
+                              "Coffee",
                               style: TextStyle(
                                 color: Color(0xFF313131),
                                 fontSize: 30,
