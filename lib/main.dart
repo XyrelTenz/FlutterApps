@@ -1,7 +1,11 @@
 // import 'dart:io';
 import 'package:flutter/material.dart';
+//Bloc
+import 'package:flutter_apps/bloc/providers/counter_provider.dart';
+import "bloc/counter_bloc.dart";
 // import "package:flutter_apps/components/herodetails.dart";
-import "package:flutter_riverpod/flutter_riverpod.dart";
+// import "package:flutter_riverpod/flutter_riverpod.dart";
+import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:flutter_apps/auth/instagram.dart';
 // import 'auth/login.dart';
 // import "auth/login2.dart";
@@ -24,19 +28,23 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 // import "widget/styled_widget.dart"k
 // import "playgroud/gesture.dart";
 // import "widget/hero.dart";
-import "screen/welcome_screen.dart";
+// import "screen/welcome_screen.dart";
+import "screen/bloc_playground.dart";
 
-void main() => runApp(ProviderScope(key: UniqueKey(), child: MainApp()));
+void main() => runApp(MainApp());
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      // Root widget
-      home: WelcomeScreen(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => CounterBloc()),
+        // Add more here if needed, e.g.:
+        // BlocProvider(create: (context) => AuthBloc()),
+      ],
+      child: MaterialApp(home: CounterScreen()),
     );
   }
 }
