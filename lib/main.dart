@@ -1,5 +1,6 @@
 // import 'dart:io';
 import 'package:flutter/material.dart';
+// import "package:flutter_apps/components/herodetails.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 // import 'package:flutter_apps/auth/instagram.dart';
 // import 'auth/login.dart';

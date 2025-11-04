@@ -20,7 +20,26 @@ class WelcomeScreen extends StatelessWidget {
                   color: Colors.transparent,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [Text("Coffee"), Text("Shop")],
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          // Text(
+                          //   "Coffee",
+                          //   style: TextStyle(color: Color(0xFFC67C4E)),
+                          // ),
+
+                          // const SizedBox(width: 10),
+
+                          // Text("Shop"),
+                          Icon(
+                            Icons.coffee,
+                            color: Color(0xFFC67C4E),
+                            size: 50,
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ),
