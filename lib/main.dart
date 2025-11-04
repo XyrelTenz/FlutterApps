@@ -44,7 +44,10 @@ class MainApp extends StatelessWidget {
         // Add more here if needed, e.g.:
         // BlocProvider(create: (context) => AuthBloc()),
       ],
-      child: MaterialApp(home: CounterScreen()),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: CounterScreen(),
+      ),
     );
   }
 }
