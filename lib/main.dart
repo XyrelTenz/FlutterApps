@@ -39,11 +39,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => CounterBloc()),
-        // Add more here if needed, e.g.:
-        // BlocProvider(create: (context) => AuthBloc()),
-      ],
+      providers: [BlocProvider(create: (context) => CounterBloc())],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: CounterScreen(),
