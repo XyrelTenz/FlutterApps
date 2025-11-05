@@ -1,3 +1,138 @@
-1. Material Widget - Done
-2. Container - Done
-3. Stack - 
+1. Layout & Structure Widgets (Intermediate)
+These are essential for designing flexible UIs.
+
+ MaterialApp — done
+
+ Container — done
+
+ Stack — done
+
+ Expanded — done
+
+ Flexible — similar to Expanded but allows flexibility
+
+ Wrap — wraps overflowing widgets to next line
+
+ Flow — custom layout positioning
+
+ Positioned — position inside Stack
+
+ LayoutBuilder — responsive layouts based on constraints
+
+ AspectRatio — maintains proportional layout
+
+ FractionallySizedBox — resizes relative to parent
+
+ Mini Project: Responsive profile card with overlapping avatar and background.
+
+2. Interactive Widgets
+
+Let users interact with your app.
+
+ GestureDetector — detect taps, swipes, etc.
+
+ InkWell — adds ripple effect on tap
+
+ Dismissible — swipe to delete
+
+ Draggable — makes widget draggable
+
+ DragTarget — receives dropped widget
+
+ Slider — adjust numeric values
+
+ Switch — toggle between ON/OFF
+
+ Checkbox — multiple select options
+
+ Radio — single select option
+
+ DropdownButton — select from a list
+
+ Mini Project: Custom settings screen with sliders and toggles.
+
+3. Input & Form Widgets
+
+For user input and data validation.
+
+ TextField — basic input
+
+ TextFormField — form input with validation
+
+ Form — manages multiple inputs
+
+ FocusNode — manage text focus
+
+ FocusScope — change focus programmatically
+
+ InputDecoration — style your input fields
+
+ onSubmitted / textInputAction — handle keyboard actions
+
+ Mini Project: Registration form with validation and password toggle.
+
+4. List & Scrollable Widgets
+
+For displaying dynamic or long data.
+
+ ListView — vertical scrolling list
+
+ ListView.builder — efficient list rendering
+
+ GridView — grid-based layouts
+
+ GridView.builder — dynamic grid
+
+ CustomScrollView — custom scrolling area
+
+ SliverList / SliverGrid — advanced scrolling layouts
+
+ RefreshIndicator — pull to refresh
+
+ ReorderableListView — drag to reorder
+
+ Mini Project: Infinite scroll news feed with pull-to-refresh.
+
+5. Animation & Motion Widgets
+
+Make your UI alive with smooth transitions.
+
+ AnimatedContainer — auto animate properties
+
+ AnimatedOpacity — fade effects
+
+ AnimatedAlign — move widgets smoothly
+
+ AnimatedList — animate list changes
+
+ AnimatedSwitcher — switch between widgets
+
+ Hero — transition animations between screens
+
+ TweenAnimationBuilder — custom tween animation
+
+ Lottie — use vector animations (JSON files)
+
+ Mini Project: Animated onboarding or success popup.
+
+6. Advanced UI Widgets
+
+For polished, modern, and creative UIs.
+
+ CustomPaint — draw shapes manually
+
+ Canvas — draw advanced visuals
+
+ ClipRRect — rounded corner clipping
+
+ ShaderMask — apply gradients and effects
+
+ BackdropFilter — apply blur or frosted glass
+
+ LayoutBuilder + MediaQuery — for full responsive design
+
+ SliverAppBar — collapsible app bar
+
+ NestedScrollView — combine multiple scroll areas
+
+Mini Project: Modern travel app with a collapsing header.

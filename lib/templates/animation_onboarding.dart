@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 
 final pages = [
   const PageData(
-    icon: Icons.food_bank_outlined,
-    title: "Search for your favourite food",
+    icon: Icons.library_books_outlined,
+    title: "Search and explore library books",
     bgColor: Color(0xFF313647),
     textColor: Color(0xFFFFF8D4),
   ),
   const PageData(
-    icon: Icons.shopping_bag_outlined,
-    title: "Add it to cart",
+    icon: Icons.assignment_turned_in_outlined,
+    title: "Borrow and return books easily",
     bgColor: Color(0xFF435663),
     textColor: Color(0xFFFFF8D4),
   ),
   const PageData(
-    icon: Icons.delivery_dining,
-    title: "Order and wait",
+    icon: Icons.notifications_active_outlined,
+    title: "Track due dates and reminders",
     bgColor: Color(0xFFA38087),
     textColor: Color(0xFF313647),
   ),
