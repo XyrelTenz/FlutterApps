@@ -5,20 +5,20 @@ final pages = [
   const PageData(
     icon: Icons.food_bank_outlined,
     title: "Search for your favourite food",
-    bgColor: Color(0xff3b1791),
-    textColor: Colors.white,
+    bgColor: Color(0xFF313647),
+    textColor: Color(0xFFFFF8D4),
   ),
   const PageData(
     icon: Icons.shopping_bag_outlined,
     title: "Add it to cart",
-    bgColor: Color(0xfffab800),
-    textColor: Color(0xff3b1790),
+    bgColor: Color(0xFF435663),
+    textColor: Color(0xFFFFF8D4),
   ),
   const PageData(
     icon: Icons.delivery_dining,
     title: "Order and wait",
-    bgColor: Color(0xffffffff),
-    textColor: Color(0xff3b1790),
+    bgColor: Color(0xFFA38087),
+    textColor: Color(0xFF313647),
   ),
 ];
 
