@@ -13,7 +13,7 @@ class _MovingBoxState extends State<MovingBox> {
 
   void movingBox() {
     setState(() {
-      x = (x + 50) % 300;
+      x = (x + 50) % 100;
       y = (y + 30) % 300;
     });
   }

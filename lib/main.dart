@@ -34,7 +34,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 // import "widget/flexible.dart";
 // import "widget/wrap.dart";
 // import "widget/flow.dart";
-import "methods/set_state.dart";
+// import "methods/set_state.dart";
+import "methods/init_state.dart";
 
 void main() => runApp(MainApp());
 
@@ -45,7 +46,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [BlocProvider(create: (context) => CounterBloc())],
-      child: MaterialApp(debugShowCheckedModeBanner: false, home: MovingBox()),
+      child: MaterialApp(debugShowCheckedModeBanner: false, home: TextState()),
     );
   }
 }
