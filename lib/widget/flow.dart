@@ -71,10 +71,16 @@ class _FlowMenuState extends State<FlowMenu>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      body: Center(
-        child: Flow(
-          delegate: FlowMenuDelegate(menuAnimation: menuAnimation),
-          children: menuItems.map(flowMenuItem).toList(),
+      body: SafeArea(
+        child: Align(
+          alignment: Alignment.bottomRight,
+          child: Padding(
+            padding: const EdgeInsets.all(10.0), // margin from edges
+            child: Flow(
+              delegate: FlowMenuDelegate(menuAnimation: menuAnimation),
+              children: menuItems.map(flowMenuItem).toList(),
+            ),
+          ),
         ),
       ),
     );
@@ -94,11 +100,10 @@ class FlowMenuDelegate extends FlowDelegate {
 
   @override
   void paintChildren(FlowPaintingContext context) {
-    // ✅ Animate horizontally expanding menu
     for (int i = 0; i < context.childCount; ++i) {
       final double dx =
           context.getChildSize(i)!.width * i * menuAnimation.value;
-      context.paintChild(i, transform: Matrix4.translationValues(dx, 0, 0));
+      context.paintChild(i, transform: Matrix4.translationValues(dx, dx, 0));
     }
   }
 }
