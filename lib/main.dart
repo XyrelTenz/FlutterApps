@@ -32,7 +32,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 // import "screen/bloc_playground.dart";
 // import "package:flutter_apps/templates/animation_onboarding.dart";
 // import "widget/flexible.dart";
-import "widget/wrap.dart";
+// import "widget/wrap.dart";
+import "widget/flow.dart";
 
 void main() => runApp(MainApp());
 
@@ -43,7 +44,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [BlocProvider(create: (context) => CounterBloc())],
-      child: MaterialApp(debugShowCheckedModeBanner: false, home: WrapWidget()),
+      child: MaterialApp(debugShowCheckedModeBanner: false, home: FlowMenu()),
     );
   }
 }

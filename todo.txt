@@ -11,11 +11,11 @@ These are essential for designing flexible UIs.
 
  Flexible — similar to Expanded but allows flexibility = Done
 
- Wrap — wraps overflowing widgets to next line
+ Wrap — wraps overflowing widgets to next line = Done
 
- Flow — custom layout positioning
+ Flow — custom layout positioning 
 
- Positioned — position inside Stack
+ Positioned — position inside Stack - Done
 
  LayoutBuilder — responsive layouts based on constraints
 
