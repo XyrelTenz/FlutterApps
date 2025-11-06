@@ -7,21 +7,8 @@ class FlexibleWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Row(
-          children: [
-            Container(width: 100, height: 100, color: Colors.red),
-            Expanded(child: Container(height: 100, color: Colors.blue)),
-            Flexible(
-              child: Container(
-                width: double.infinity, // tries to keep this width
-                height: 100,
-                color: Colors.green,
-                child: Text("Hello World"),
-              ),
-            ),
-            Column(children: [
-              
-              
+        child: Flexible(
+          child: Container(height: 200, width: 100, color: Colors.black),
         ),
       ),
     );
