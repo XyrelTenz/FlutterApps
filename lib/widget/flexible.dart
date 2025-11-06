@@ -8,7 +8,11 @@ class FlexibleWidget extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Flexible(
-          child: Container(height: 200, width: 100, color: Colors.black),
+          child: Container(
+            height: 200,
+            width: 200,
+            color: const Color.fromARGB(255, 147, 82, 82),
+          ),
         ),
       ),
     );

@@ -9,7 +9,7 @@ These are essential for designing flexible UIs.
 
  Expanded — done
 
- Flexible — similar to Expanded but allows flexibility
+ Flexible — similar to Expanded but allows flexibility = Done
 
  Wrap — wraps overflowing widgets to next line
 
