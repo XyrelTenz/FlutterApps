@@ -19,7 +19,9 @@ class FlexibleWidget extends StatelessWidget {
                 child: Text("Hello World"),
               ),
             ),
-          ],
+            Column(children: [
+              
+              
         ),
       ),
     );
