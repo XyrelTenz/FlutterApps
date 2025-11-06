@@ -13,9 +13,10 @@ class FlexibleWidget extends StatelessWidget {
             Expanded(child: Container(height: 100, color: Colors.blue)),
             Flexible(
               child: Container(
-                width: 50, // tries to keep this width
+                width: double.infinity, // tries to keep this width
                 height: 100,
                 color: Colors.green,
+                child: Text("Hello World"),
               ),
             ),
           ],

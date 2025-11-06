@@ -30,7 +30,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 // import "widget/hero.dart";
 // import "screen/welcome_screen.dart";
 // import "screen/bloc_playground.dart";
-import "package:flutter_apps/templates/animation_onboarding.dart";
+// import "package:flutter_apps/templates/animation_onboarding.dart";
+import "widget/flexible.dart";
 
 void main() => runApp(MainApp());
 
@@ -43,7 +44,7 @@ class MainApp extends StatelessWidget {
       providers: [BlocProvider(create: (context) => CounterBloc())],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: ConcentricAnimationOnboarding(),
+        home: FlexibleWidget(),
       ),
     );
   }
