@@ -8,16 +8,41 @@ class TextState extends StatefulWidget {
 }
 
 class _TextStates extends State<TextState> {
-  late String message;
+  late int count;
 
   @override
+  // Run only Once and need to Hot Reload
   void initState() {
     super.initState();
-    message = "Xyrel";
+    count = 0;
+  }
+
+  void increment() {
+    setState(() {
+      count++;
+    });
+  }
+
+  void decrement() {
+    setState(() {
+      count--;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text(message)));
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(count.toString()),
+
+            ElevatedButton(onPressed: increment, child: Text("Increment")),
+            ElevatedButton(onPressed: decrement, child: Text("Decrement")),
+          ],
+        ),
+      ),
+    );
   }
 }
