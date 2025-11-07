@@ -38,7 +38,7 @@ class _TextStates extends State<TextState> {
           children: [
             Text(count.toString()),
 
-            ElevatedButton(onPressed: increment, child: Text("Increment")),
+            ElevatedButton(onPressed: increment, child: Text("Increments")),
             ElevatedButton(onPressed: decrement, child: Text("Decrement")),
           ],
         ),

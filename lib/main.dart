@@ -1,11 +1,14 @@
 // import 'dart:io';
 import 'package:flutter/material.dart';
+import "package:flutter_riverpod/flutter_riverpod.dart";
 //Bloc
-import 'package:flutter_apps/bloc/providers/counter_provider.dart';
-import "bloc/counter_bloc.dart";
+// import 'package:flutter_apps/bloc/providers/counter_provider.dart';
+// import "bloc/counter_bloc.dart";
+//Provider
+// import "package:provider/provider.dart";
 // import "package:flutter_apps/components/herodetails.dart";
 // import "package:flutter_riverpod/flutter_riverpod.dart";
-import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:flutter_apps/auth/instagram.dart';
 // import 'auth/login.dart';
 // import "auth/login2.dart";
@@ -37,17 +40,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 // import "methods/set_state.dart";
 import "methods/init_state.dart";
 
-void main() => runApp(MainApp());
+void main() => runApp(ProviderScope(child: MainApp()));
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [BlocProvider(create: (context) => CounterBloc())],
-      child: MaterialApp(debugShowCheckedModeBanner: false, home: TextState()),
-    );
+    // return MultiBlocProvider(
+    // providers: [BlocProvider(create: (context) => CounterBloc())],
+    // child: MaterialApp(debugShowCheckedModeBanner: false, home: TextState()),
+    // );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: TextState());
   }
 }
 
