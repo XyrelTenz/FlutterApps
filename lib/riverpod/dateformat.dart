@@ -20,12 +20,14 @@ class _DateFormatState extends ConsumerState<DateFormat> {
     final date = ref.watch(dataFormat);
     final formatedDate = date.format(DateTime.now());
     return Scaffold(
-      body: Text(
-        formatedDate,
-        style: TextStyle(
-          color: Color(0xFF313131),
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
+      body: Center(
+        child: Text(
+          formatedDate,
+          style: TextStyle(
+            color: Color(0xFF313131),
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );

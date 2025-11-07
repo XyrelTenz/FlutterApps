@@ -39,7 +39,8 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 // import "widget/flow.dart";
 // import "methods/set_state.dart";
 // import "methods/init_state.dart";
-import "riverpod/helloworld.dart";
+// import "riverpod/helloworld.dart";
+import "riverpod/dateformat.dart";
 
 void main() => runApp(ProviderScope(child: MainApp()));
 
@@ -52,10 +53,7 @@ class MainApp extends StatelessWidget {
     // providers: [BlocProvider(create: (context) => CounterBloc())],
     // child: MaterialApp(debugShowCheckedModeBanner: false, home: TextState()),
     // );
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HelloWorldView(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: DateFormat());
   }
 }
 
