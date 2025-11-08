@@ -42,7 +42,8 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 // import "riverpod/helloworld.dart";
 // import "riverpod/dateformat.dart";
 // import "riverpod/counter.dart";
-import "riverpod/user.dart";
+// import "riverpod/user.dart";
+import "mixin/student.dart";
 
 void main() => runApp(ProviderScope(child: MainApp()));
 
