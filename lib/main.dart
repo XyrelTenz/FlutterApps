@@ -56,7 +56,7 @@ class MainApp extends StatelessWidget {
     // providers: [BlocProvider(create: (context) => CounterBloc())],
     // child: MaterialApp(debugShowCheckedModeBanner: false, home: TextState()),
     // );
-    return MaterialApp(debugShowCheckedModeBanner: false, home: User());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Students());
   }
 }
 
