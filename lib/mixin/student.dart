@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-mixin StudentsInfo {
+mixin Adult {
+  String name = "Xyrel";
+}
+mixin StudentsInfo on Adult {
   late int age;
 }
 
@@ -13,6 +16,16 @@ mixin CheckAge {
   }
 }
 
+mixin Center {
+  MainAxisAlignment get centerAlignment => MainAxisAlignment.center;
+}
+
+mixin TextSize {
+  double textSize() {
+    return 24.0;
+  }
+}
+
 class Students extends StatefulWidget {
   const Students({super.key});
 
@@ -20,7 +33,8 @@ class Students extends StatefulWidget {
   State<Students> createState() => _StudentsState();
 }
 
-class _StudentsState extends State<Students> with StudentsInfo, CheckAge {
+class _StudentsState extends State<Students>
+    with Adult, StudentsInfo, CheckAge, Center, TextSize {
   @override
   void initState() {
     super.initState();
@@ -31,8 +45,20 @@ class _StudentsState extends State<Students> with StudentsInfo, CheckAge {
   @override
   Widget build(BuildContext context) {
     bool isAdult = checkStudentAge(age);
+
     return Scaffold(
-      body: Column(children: [Text(isAdult ? "Minor" : "Adult")]),
+      body: SafeArea(
+        child: Row(
+          mainAxisAlignment: centerAlignment,
+          children: [
+            Text(
+              isAdult ? "Minor" : "Adult",
+              style: TextStyle(fontSize: textSize()),
+            ),
+            Text(name),
+          ],
+        ),
+      ),
     );
   }
 }
