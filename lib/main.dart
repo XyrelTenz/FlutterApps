@@ -43,7 +43,8 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 // import "riverpod/dateformat.dart";
 // import "riverpod/counter.dart";
 // import "riverpod/user.dart";
-import "mixin/student.dart";
+// import "mixin/student.dart";
+import 'screen/login_screen.dart';
 
 void main() => runApp(ProviderScope(child: MainApp()));
 
@@ -56,7 +57,7 @@ class MainApp extends StatelessWidget {
     // providers: [BlocProvider(create: (context) => CounterBloc())],
     // child: MaterialApp(debugShowCheckedModeBanner: false, home: TextState()),
     // );
-    return MaterialApp(debugShowCheckedModeBanner: false, home: Students());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: UserLogin());
   }
 }
 
