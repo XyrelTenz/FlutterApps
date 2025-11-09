@@ -103,6 +103,9 @@ class _StudentsState extends State<Students>
                 controller: _controller,
                 obscureText: false,
                 decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(width: 2, color: Colors.black),
+                  ),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(width: 2, color: Colors.black),
                   ),
