@@ -10,6 +10,19 @@ class UserLogin extends StatefulWidget {
 class _UserLoginState extends State<UserLogin> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text("Login Form")));
+    return Scaffold(
+      backgroundColor: Colors.yellow[100],
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[Text("Login")],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
