@@ -1,5 +1,6 @@
 // import 'dart:io';
 import 'package:flutter/material.dart';
+// import "package:flutter_apps/animations/animation_page.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 //Bloc
 // import 'package:flutter_apps/bloc/providers/counter_provider.dart';
@@ -33,7 +34,7 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 // import "widget/hero.dart";
 // import "screen/welcome_screen.dart";
 // import "screen/bloc_playground.dart";
-// import "package:flutter_apps/templates/animation_onboarding.dart";
+import "package:flutter_apps/templates/animation_onboarding.dart";
 // import "widget/flexible.dart";
 // import "widget/wrap.dart";
 // import "widget/flow.dart";
@@ -44,7 +45,7 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 // import "riverpod/counter.dart";
 // import "riverpod/user.dart";
 // import "mixin/student.dart";
-import 'screen/login_screen.dart';
+// import 'screen/login_screen.dart';
 
 void main() => runApp(ProviderScope(child: MainApp()));
 
@@ -57,7 +58,10 @@ class MainApp extends StatelessWidget {
     // providers: [BlocProvider(create: (context) => CounterBloc())],
     // child: MaterialApp(debugShowCheckedModeBanner: false, home: TextState()),
     // );
-    return MaterialApp(debugShowCheckedModeBanner: false, home: UserLogin());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: ConcentricAnimationOnboarding(),
+    );
   }
 }
 

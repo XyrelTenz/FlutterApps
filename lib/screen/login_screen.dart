@@ -47,7 +47,7 @@ class _UserLoginState extends State<UserLogin> {
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.9,
                   child: TextField(
-                    obscureText: false,
+                    obscureText: true,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
