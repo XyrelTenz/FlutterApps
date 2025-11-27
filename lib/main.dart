@@ -46,6 +46,7 @@ import "package:flutter_apps/templates/animation_onboarding.dart";
 // import "riverpod/user.dart";
 // import "mixin/student.dart";
 // import 'screen/login_screen.dart';
+import "widget/tab_bar.dart";
 
 void main() => runApp(ProviderScope(child: MainApp()));
 
@@ -58,9 +59,6 @@ class MainApp extends StatelessWidget {
     // providers: [BlocProvider(create: (context) => CounterBloc())],
     // child: MaterialApp(debugShowCheckedModeBanner: false, home: TextState()),
     // );
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ConcentricAnimationOnboarding(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: TabBarWidget());
   }
 }
